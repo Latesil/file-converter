@@ -1,0 +1,13 @@
+[default]
+name=Default
+runtime=host
+toolchain=default
+config-opts=
+run-opts=
+prefix=/home/late/.var/app/org.gnome.Builder/cache/gnome-builder/install/file-converter/host
+app-id=
+postbuild=
+prebuild=
+
+[default.environment]
+RUST_BACKTRACE=1

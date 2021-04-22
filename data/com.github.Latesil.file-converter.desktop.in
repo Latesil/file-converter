@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=file-converter
+Exec=file-converter
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="file-converter">
+	<schema id="com.github.Latesil.file-converter" path="/com/github/Latesil/file-converter/">
+	</schema>
+</schemalist>

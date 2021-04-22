@@ -1,0 +1,4 @@
+data/com.github.Latesil.file-converter.desktop.in
+data/com.github.Latesil.file-converter.appdata.xml.in
+data/com.github.Latesil.file-converter.gschema.xml
+src/window.ui

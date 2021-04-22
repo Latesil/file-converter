@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.22 -->
+  <object class="GtkPopover" id="main_popover">
+    <property name="can_focus">False</property>
+    <property name="relative_to">main_menu_button</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">10</property>
+        <property name="margin_right">10</property>
+        <property name="margin_top">10</property>
+        <property name="margin_bottom">10</property>
+        <property name="orientation">vertical</property>
+        <property name="homogeneous">False</property>
+        <child>
+          <object class="GtkModelButton" id="preferences_button">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="text" translatable="yes">Preferences</property>
+            <!-- <signal name="clicked" handler="on_preferences_button_clicked" swapped="no"/> -->
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkModelButton" id="about_button">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="text" translatable="yes">About</property>
+            <!-- <signal name="clicked" handler="on_about_button_clicked" swapped="no"/> -->
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkLabel" id="start_label">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="halign">center</property>
+    <property name="label" translatable="yes">Click + to choose a folder</property>
+    <property name="justify">center</property>
+    <attributes>
+      <attribute name="foreground" value="#88888a8a8585"/>
+      <attribute name="size" value="15360"/>
+    </attributes>
+  </object>
+  <object class="GtkImage" id="start_view_icon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="valign">center</property>
+    <property name="pixel_size">128</property>
+    <property name="opacity">0.3000000002235174</property>
+    <property name="icon_name">document-new-symbolic</property>
+    <property name="icon_size">0</property>
+    <property name="margin_bottom">18</property>
+    <style>
+      <class name="grey-image"/>
+    </style>
+  </object>
+  <object class="HdyApplicationWindow" id="main_window">
+    <property name="can_focus">False</property>
+    <property name="default_width">800</property>
+    <property name="default_height">420</property>
+    <property name="title" translatable="yes">File Converter</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="HdyLeaflet" id="header">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hhomogeneous_unfolded">True</property>
+            <child>
+              <object class="HdyHeaderBar" id="left_header">
+                <property name="visible">True</property>
+                <property name="hexpand">False</property>
+                <property name="can_focus">False</property>
+                <property name="title" translatable="yes">File Converter</property>
+                <property name="show_close_button">True</property>
+                <child>
+                  <object class="GtkButton" id="add_button">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <property name="tooltip_text" translatable="yes">Add new</property>
+                    <signal name="clicked" handler="on_add_button_clicked" swapped="no"/>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="icon_name">list-add-symbolic</property>
+                        <property name="icon_size">1</property>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="suggested-action"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="pack_type">start</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkMenuButton" id="main_menu_button">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="focus_on_click">False</property>
+                    <property name="popover">main_popover</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="icon_name">open-menu-symbolic</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="pack_type">end</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkOverlay" id="notification_overlay">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="HdyLeaflet" id="content_box">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="can-swipe-back">True</property>
+                <property name="hhomogeneous_unfolded">True</property>
+                <child>
+                  <object class="GtkStack" id="main_stack">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="hexpand">False</property>
+                    <property name="transition-duration">200</property>
+                    <property name="transition-type">crossfade</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkRevealer" id="main_revealer">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkBox" id="_main_revealer_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="valign">start</property>
+                    <property name="spacing">20</property>
+                    <child>
+                      <object class="GtkLabel" id="label2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Test Nptification</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <style>
+                      <class name="app-notification"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
