@@ -13,6 +13,8 @@ impl StartView {
             .get_object("start_view")
             .expect("Failed to find the start_view object");
 
+        get_widget!(builder, gtk::Label, start_label);
+
         Self { widget }
     }
 }

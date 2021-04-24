@@ -7,6 +7,9 @@ mod window;
 mod stacks;
 use crate::window::Window;
 
+#[macro_use]
+extern crate gtk_macros;
+
 fn main() {
     gtk::init().unwrap_or_else(|_| panic!("Failed to initialize GTK."));
     libhandy::init();

@@ -36,7 +36,7 @@
                   <property name="visible">True</property>
                   <property name="can-focus">False</property>
                   <property name="halign">center</property>
-                  <property name="label" translatable="yes">Click + to choose a folder</property>
+                  <property name="label" translatable="yes">Click Add to choose a file</property>
                   <property name="justify">center</property>
                   <attributes>
                     <attribute name="foreground" value="#88888a8a8585"/>
@@ -47,6 +47,26 @@
                   <property name="expand">False</property>
                   <property name="fill">True</property>
                   <property name="position">1</property>
+                </packing>
+              </child>
+              <child>
+                <object class="GtkButton" id="add_button">
+                  <property name="visible">True</property>
+                  <property name="can_focus">True</property>
+                  <property name="halign">center</property>
+                  <property name="valign">center</property>
+                  <property name="label">Add</property>
+                  <property name="margin">5</property>
+                  <property name="tooltip_text" translatable="yes">Add new</property>
+                  <signal name="clicked" handler="on_add_button_clicked" swapped="no"/>
+                  <style>
+                    <class name="suggested-action"/>
+                    <class name="flat"/>
+                  </style>
+                </object>
+                <packing>
+                  <property name="pack_type">start</property>
+                  <property name="expand">False</property>
                 </packing>
               </child>
           </object>

@@ -94,6 +94,7 @@ dependencies = [
  "gio",
  "glib",
  "gtk",
+ "gtk-macros",
  "libhandy",
 ]
 
@@ -390,6 +391,12 @@ dependencies = [
  "pango-sys",
  "pkg-config",
 ]
+
+[[package]]
+name = "gtk-macros"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1874c48e670519ce192093ac906c08a6dde7cb2d18b28722ef237726a39c3a63"
 
 [[package]]
 name = "gtk-sys"
