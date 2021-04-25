@@ -33,6 +33,7 @@ sources = files(
   'window.rs',
   'stacks/startview.rs',
   'stacks/mod.rs',
+  'stacks/filelistview.rs',
 )
 
 cargo_script = find_program(join_paths(meson.source_root(), 'build-aux/cargo.sh'))

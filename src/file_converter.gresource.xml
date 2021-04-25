@@ -3,5 +3,6 @@
   <gresource prefix="/com/github/Latesil/file-converter">
     <file>window.ui</file>
     <file>startview.ui</file>
+    <file>filelistview.ui</file>
   </gresource>
 </gresources>
