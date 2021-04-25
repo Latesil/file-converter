@@ -15,6 +15,18 @@ impl StartView {
 
         get_widget!(builder, gtk::Label, start_label);
 
+        builder.connect_signals(|builder, handler_name| {
+            match handler_name {
+                "on_add_button_clicked" => Box::new(self::StartView::add_button_clicked),
+                _ => Box::new(|_| {None})
+            }
+        });
+
         Self { widget }
+    }
+
+    fn add_button_clicked(param: &[glib::Value]) -> Option<glib::Value>  {
+        println!("on_add_button_clicked");
+        None
     }
 }
